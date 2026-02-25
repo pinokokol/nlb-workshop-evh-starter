@@ -40,7 +40,9 @@ services:
     environment:
       KAFKA_CLUSTERS_0_NAME: eventhubs-emulator
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: eventhubs-emulator:9092
-      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: PLAINTEXT
+      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: SASL_PLAINTEXT
+      KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM: PLAIN
+      KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG: org.apache.kafka.common.security.plain.PlainLoginModule required username="$$ConnectionString" password="Endpoint=sb://eventhubs-emulator/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;";
     depends_on:
       - eventhubs-emulator
 
@@ -67,7 +69,10 @@ services:
       Messaging__Kafka__Topic: orders
       Messaging__Kafka__ConsumerGroup: projection
       Messaging__Kafka__ReplayConsumerGroup: replay
-      Messaging__Kafka__SecurityProtocol: Plaintext
+      Messaging__Kafka__SecurityProtocol: SaslPlaintext
+      Messaging__Kafka__SaslMechanism: Plain
+      Messaging__Kafka__SaslUsername: $$ConnectionString
+      Messaging__Kafka__SaslPassword: Endpoint=sb://eventhubs-emulator/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
     volumes:
       - readmodel-data:/data
     depends_on:
@@ -94,7 +99,10 @@ services:
       Messaging__Kafka__Topic: orders
       Messaging__Kafka__ConsumerGroup: projection
       Messaging__Kafka__ReplayConsumerGroup: replay
-      Messaging__Kafka__SecurityProtocol: Plaintext
+      Messaging__Kafka__SecurityProtocol: SaslPlaintext
+      Messaging__Kafka__SaslMechanism: Plain
+      Messaging__Kafka__SaslUsername: $$ConnectionString
+      Messaging__Kafka__SaslPassword: Endpoint=sb://eventhubs-emulator/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;
     volumes:
       - readmodel-data:/data
     depends_on:

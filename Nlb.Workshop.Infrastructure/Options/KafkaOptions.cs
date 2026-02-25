@@ -11,11 +11,12 @@ public sealed class KafkaOptions
 
     public string ReplayConsumerGroup { get; set; } = "replay";
 
-    public string SecurityProtocol { get; set; } = "Plaintext";
+    public string SecurityProtocol { get; set; } = "SaslPlaintext";
 
-    public string? SaslMechanism { get; set; }
+    public string? SaslMechanism { get; set; } = "Plain";
 
-    public string? SaslUsername { get; set; }
+    public string? SaslUsername { get; set; } = "$ConnectionString";
 
-    public string? SaslPassword { get; set; }
+    public string? SaslPassword { get; set; } =
+        "Endpoint=sb://localhost/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;";
 }
