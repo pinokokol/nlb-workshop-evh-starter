@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="Nlb.Workshop.Api/Nlb.Workshop.Api.csproj" />
+  <Project Path="Nlb.Workshop.Application/Nlb.Workshop.Application.csproj" />
+  <Project Path="Nlb.Workshop.Consumer.Worker/Nlb.Workshop.Consumer.Worker.csproj" />
+  <Project Path="Nlb.Workshop.Contracts/Nlb.Workshop.Contracts.csproj" />
+  <Project Path="Nlb.Workshop.Domain/Nlb.Workshop.Domain.csproj" />
+  <Project Path="Nlb.Workshop.Infrastructure/Nlb.Workshop.Infrastructure.csproj" />
+  <Project Path="Nlb.Workshop.Tools.Replay/Nlb.Workshop.Tools.Replay.csproj" />
+</Solution>

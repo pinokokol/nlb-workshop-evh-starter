@@ -35,11 +35,13 @@ ScaffoldingReadMe.txt
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
+.nuget/
 
 # Others
 ~$*
 *~
 CodeCoverage/
+.dotnet-cli-home/
 
 # MSBuild Binary and Structured Log
 *.binlog

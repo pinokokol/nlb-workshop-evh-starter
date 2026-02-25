@@ -1,0 +1,56 @@
+@Nlb_Workshop_Api_HostAddress = http://localhost:5001
+
+### Publish single order (v1)
+POST {{Nlb_Workshop_Api_HostAddress}}/orders
+Content-Type: application/json
+
+{
+  "orderId": null,
+  "customerId": "customer-001",
+  "amount": 130.50,
+  "currency": "EUR",
+  "correlationId": null,
+  "useV2": false,
+  "sourceSystem": null
+}
+
+### Publish single order (v2)
+POST {{Nlb_Workshop_Api_HostAddress}}/orders
+Content-Type: application/json
+
+{
+  "orderId": null,
+  "customerId": "customer-001",
+  "amount": 250,
+  "currency": "EUR",
+  "correlationId": "workshop-v2",
+  "useV2": true,
+  "sourceSystem": "workshop-demo"
+}
+
+### Publish in bulk
+POST {{Nlb_Workshop_Api_HostAddress}}/orders/bulk
+Content-Type: application/json
+
+{
+  "orders": [
+    {
+      "orderId": null,
+      "customerId": "customer-001",
+      "amount": 10,
+      "currency": "EUR",
+      "correlationId": null,
+      "useV2": false,
+      "sourceSystem": null
+    },
+    {
+      "orderId": null,
+      "customerId": "customer-002",
+      "amount": 15,
+      "currency": "EUR",
+      "correlationId": null,
+      "useV2": true,
+      "sourceSystem": "bulk"
+    }
+  ]
+}

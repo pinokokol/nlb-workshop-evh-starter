@@ -1,0 +1,13 @@
+{
+  "type": "record",
+  "name": "OrderCreatedV1",
+  "namespace": "Nlb.Workshop.Contracts.Events",
+  "fields": [
+    { "name": "orderId", "type": "string" },
+    { "name": "customerId", "type": "string" },
+    { "name": "amount", "type": "double" },
+    { "name": "currency", "type": "string" },
+    { "name": "createdAt", "type": "string" },
+    { "name": "createdBy", "type": "string" }
+  ]
+}
